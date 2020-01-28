@@ -6,6 +6,6 @@ Set up the vue cli scaffolding
 
 npm i -g @vue/cli
 
-vue create
+vue create iatixmltables
 
 vue add vuetify
