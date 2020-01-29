@@ -1,44 +1,7 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      :color="color"
-      :expand-on-hover="expandOnHover"
-      :mini-variant="miniVariant"
-      :right="right"
-      :src="bg"
-      absolute
-      dark
-    >
-      <v-list dense nav class="py-0">
-        <v-list-item two-line :class="miniVariant && 'px-0'">
-          <v-list-item-avatar>
-            <img src="https://randomuser.me/api/portraits/men/81.jpg" />
-          </v-list-item-avatar>
-
-          <v-list-item-content>
-            <v-list-item-title>Application</v-list-item-title>
-            <v-list-item-subtitle>Subtext</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-divider></v-divider>
-
-        <v-list-item v-for="item in items" :key="item.title" link>
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar app color="primary" dark>
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
+    <AimsAppBar />
+    <AimsSideNav />
     <v-content>
       <Welcome />
     </v-content>
@@ -48,12 +11,16 @@
 <script lang="ts">
 import Vue from 'vue'
 import Welcome from './components/Welcome.vue'
+import AimsAppBar from './components/AimsAppBar.vue'
+import AimsSideNav from './components/AimsSideNav.vue'
 
 export default Vue.extend({
   name: 'App',
 
   components: {
-    Welcome
+    'Welcome': Welcome,
+    'AimsAppBar': AimsAppBar,
+    'AimsSideNav': AimsSideNav
   },
 
   data: () => ({
