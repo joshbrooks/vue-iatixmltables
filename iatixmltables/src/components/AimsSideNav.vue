@@ -1,30 +1,7 @@
 <template>
-  <v-navigation-drawer
-    app
-    v-model="drawer"
-    :color="color"
-    :expand-on-hover="expandOnHover"
-    :mini-variant="miniVariant"
-    :right="right"
-    :src="bg"
-    dark
-    clipped
-  >
-    <v-list dense nav class="py-0">
-      <v-list-item two-line :class="miniVariant && 'px-0'">
-        <v-list-item-avatar>
-          <img src="https://randomuser.me/api/portraits/men/81.jpg" />
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>Application</v-list-item-title>
-          <v-list-item-subtitle>Subtext</v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-list-item v-for="item in items" :key="item.title" link>
+  <v-navigation-drawer app clipped permanent>
+    <v-list dense nav>
+      <v-list-item v-for="item in items" :key="item.title" link :to="item.to">
         <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
@@ -39,6 +16,29 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'AimsSideNav'
+  name: 'AimsSideNav',
+  data: () => {
+    return {
+      dashboard_items: [],
+      items: [
+        { title: 'Dashboard', icon: 'mdi-view-dashboard', to: 'dashboard' },
+        { title: 'Query Builder', icon: 'mdi-view-dashboard', to: 'qb' },
+        { title: 'Activities', icon: 'mdi-image', to: 'activities' },
+        { title: 'Transactions', icon: 'mdi-currency-usd', to: 'transactions' },
+        {
+          title: 'Organisations',
+          icon: 'mdi-account-card-details-outline',
+          to: 'organisations'
+        },
+        { title: 'About', icon: 'mdi-help-box', to: 'help' }
+      ],
+
+      admin_items: [
+
+      ],
+
+      right: null
+    }
+  }
 })
 </script>

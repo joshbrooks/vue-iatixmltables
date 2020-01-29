@@ -18,9 +18,9 @@ export default Vue.extend({
   name: 'App',
 
   components: {
-    'Welcome': Welcome,
-    'AimsAppBar': AimsAppBar,
-    'AimsSideNav': AimsSideNav
+    Welcome: Welcome,
+    AimsAppBar: AimsAppBar,
+    AimsSideNav: AimsSideNav
   },
 
   data: () => ({
