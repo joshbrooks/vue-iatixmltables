@@ -2,13 +2,7 @@
   <v-container>
     <v-layout text-center wrap fluid>
       <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to your AIMS store
-        </h1>
-        <v-alert type="success">
-          I'm a success alert.
-        </v-alert>
-
+        <h1 class="display-2 font-weight-bold mb-3">Welcome to your AIMS store</h1>
         <p>{{ info }}</p>
         <router-view />
       </v-flex>

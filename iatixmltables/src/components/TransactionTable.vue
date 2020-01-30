@@ -4,17 +4,18 @@
 <script>
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'ActivityTable',
+  name: 'TransactionTable',
   mounted() {
-    if (!this.$store.state.activities_loaded) {
-      this.$store.dispatch('fetch')
+    if (!this.$store.state.transactions_loaded) {
+      this.$store.dispatch('fetch_transactions')
     }
   },
   computed: {
     desserts() {
-      return this.$store.state.activities
+      return this.$store.state.transactions
     }
   },
+
   data: () => ({
     headers: [
       {
@@ -23,14 +24,19 @@ export default Vue.extend({
         value: 'iati_identifier'
       },
       {
-        text: 'Reporting Org Ref',
+        text: 'Value',
         align: 'left',
-        value: 'reporting_org_ref'
+        value: 'value'
       },
       {
-        text: 'IATI Version',
+        text: 'Date',
         align: 'left',
-        value: 'iati_version'
+        value: 'value_value_date'
+      },
+      {
+        text: 'Currency',
+        align: 'left',
+        value: 'value_currency'
       }
     ]
   })
