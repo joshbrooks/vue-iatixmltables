@@ -59,12 +59,33 @@ const routes = [
       )
   },
   {
+    path: '/activities/:activity_id',
+    name: 'activity-detail',
+    component: () =>
+      lazyLoadView(
+        import(
+          /* webpackChunkName: "activitytable" */ '../components/ActivityDetail.vue'
+        )
+      ),
+    props: true
+  },
+  {
     path: '/transactions',
     name: 'transactions',
     component: () =>
       lazyLoadView(
         import(
           /* webpackChunkName: "activitytable" */ '../components/TransactionTable.vue'
+        )
+      )
+  },
+  {
+    path: '/organisations',
+    name: 'organisations',
+    component: () =>
+      lazyLoadView(
+        import(
+          /* webpackChunkName: "activitytable" */ '../components/OrganisationTable.vue'
         )
       )
   }
