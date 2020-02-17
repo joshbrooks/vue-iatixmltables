@@ -21,21 +21,20 @@ export default Vue.extend({
     return {
       dashboard_items: [],
       items: [
-        { title: 'Dashboard', icon: 'mdi-view-dashboard', to: 'dashboard' },
-        { title: 'Query Builder', icon: 'mdi-view-dashboard', to: 'qb' },
-        { title: 'Activities', icon: 'mdi-image', to: 'activities' },
-        { title: 'Transactions', icon: 'mdi-currency-usd', to: 'transactions' },
+        // { title: 'Query Builder', icon: 'mdi-view-dashboard', to: 'qb' },
+        { title: 'Home', icon: 'mdi-home', to: '/' },
+        { title: 'Activities', icon: 'mdi-image', to: '/activities' },
+        { title: 'Transactions', icon: 'mdi-currency-usd', to: '/transactions' },
         {
           title: 'Organisations',
           icon: 'mdi-account-card-details-outline',
           to: 'organisations'
         },
-        { title: 'About', icon: 'mdi-help-box', to: 'help' }
+        { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' }
+        // { title: 'About', icon: 'mdi-help-box', to: 'help' }
       ],
 
-      admin_items: [
-
-      ],
+      admin_items: [],
 
       right: null
     }

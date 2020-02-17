@@ -1,27 +1,43 @@
 <template>
-  <v-data-table :headers="headers" :items="desserts" :items-per-page="5" class="elevation-1"></v-data-table>
+  <v-card>
+    <v-card-title>
+      Transactions
+      <v-spacer></v-spacer>
+      <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
+    </v-card-title>
+    <v-data-table
+      dense
+      :headers="headers"
+      :items="desserts"
+      :items-per-page="15"
+      class="elevation-1"
+      :search="search"
+    ></v-data-table>
+  </v-card>
 </template>
 <script>
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'TransactionTable',
   mounted() {
-    if (!this.$store.state.transactions_loaded) {
+    if (!this.$store.state.transactionStore.transactions_loaded) {
       this.$store.dispatch('fetch_transactions')
     }
   },
   computed: {
     desserts() {
-      return this.$store.state.transactions
+      return this.$store.state.transactionStore.transactions
     }
   },
 
   data: () => ({
+    search: '',
     headers: [
       {
-        text: 'IATI Identifier',
+        text: 'Transaction ID',
         align: 'left',
-        value: 'iati_identifier'
+        value: 'id'
       },
       {
         text: 'Value',
@@ -31,12 +47,17 @@ export default Vue.extend({
       {
         text: 'Date',
         align: 'left',
-        value: 'value_value_date'
+        value: 'datestamp'
       },
       {
         text: 'Currency',
         align: 'left',
-        value: 'value_currency'
+        value: 'currency'
+      },
+      {
+        text: 'Transaction Type',
+        align: 'left',
+        value: 'transactionTypeCode'
       }
     ]
   })

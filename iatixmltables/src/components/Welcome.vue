@@ -2,8 +2,6 @@
   <v-container>
     <v-layout text-center wrap fluid>
       <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">Welcome to your AIMS store</h1>
-        <p>{{ info }}</p>
         <router-view />
       </v-flex>
     </v-layout>
@@ -12,16 +10,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import axios from 'axios'
 export default Vue.extend({
   name: 'Welcome',
 
   data: () => ({
-    info: 'Hi'
+    welcome_message: 'Welcome to your AIMS store'
   })
-
-  // mounted() {
-  //   axios.get('http://example.com').then(response => (this.info = 'Hello! '))
-  // }
 })
 </script>
