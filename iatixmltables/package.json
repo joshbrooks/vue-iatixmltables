@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/google-protobuf": "^3.7.2",
     "@types/leaflet": "^1.5.8",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.4.4",
     "crossfilter2": "^1.5.2",
     "leaflet": "^1.6.0",
